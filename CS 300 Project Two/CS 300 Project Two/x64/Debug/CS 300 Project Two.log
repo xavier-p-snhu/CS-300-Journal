@@ -1,7 +1,3 @@
-﻿  CSVparser.cpp
-C:\Users\Xavier\source\repos\CS 300 Project Two\CS 300 Project Two\CSVparser.cpp(116,27): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Xavier\source\repos\CS 300 Project Two\CS 300 Project Two\CSVparser.cpp(121,26): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Xavier\source\repos\CS 300 Project Two\CS 300 Project Two\CSVparser.cpp(203,24): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-  Main.cpp
-  Generating Code...
-  CS 300 Project Two.vcxproj -> C:\Users\Xavier\source\repos\CS 300 Project Two\x64\Debug\CS 300 Project Two.exe
+﻿  Main.cpp
+C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\CS 300 Project Two\Main.cpp(382,1): warning C4715: 'colorToString': not all control paths return a value
+  CS 300 Project Two.vcxproj -> C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\x64\Debug\CS 300 Project Two.exe
