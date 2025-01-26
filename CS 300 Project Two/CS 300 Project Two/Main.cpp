@@ -84,19 +84,6 @@ double strToDouble(string str, char ch) {
     return atof(str.c_str());
 }
 
-string colorToString(Color color)
-{
-    switch (color)
-    {
-    case RED:
-        return "RED";
-        break;
-    case BLACK:
-        return "BLACK";
-        break;
-    }
-}
-
 /**
  * The one and only main() method
  */

@@ -27,7 +27,8 @@ RedBlackTree::RedBlackTree() : root(nullptr) {}
 
 // Destructor
 RedBlackTree::~RedBlackTree() {
-    FreeMemory(root);
+    // FIXME: FreeMemory causes memory problems, ironically
+    //FreeMemory(root);
 }
 
 // Print Node info (for traversal functions)
@@ -250,5 +251,18 @@ void RedBlackTree::FreeMemory(Node* node) {
     FreeMemory(node->left);
     FreeMemory(node->right);
     delete node;
+}
+
+string colorToString(Color color)
+{
+    switch (color)
+    {
+    case RED:
+        return "RED";
+        break;
+    case BLACK:
+        return "BLACK";
+        break;
+    }
 }
 
