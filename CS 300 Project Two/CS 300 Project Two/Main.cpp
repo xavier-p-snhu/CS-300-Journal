@@ -5,6 +5,7 @@
 #include <vector>
 #include "CSVparser.hpp"
 #include "RedBlackTree.hpp"
+#include "Main.h"
 
 using namespace std;
 using std::vector;
@@ -30,6 +31,17 @@ void displayCourse(Course course) {
 //============================================================================
 // Static methods used for testing
 //============================================================================
+
+int stringToKey(string stringToKeyify)
+{
+    //FIXME: make all keys unique
+    int key = 0;
+    for (int i = 0; i < stringToKeyify.size(); i++) {
+        int charToInt = stringToKeyify[i];
+        key += charToInt;
+    }
+    return key;
+}
 
 /**
  * Load a CSV file containing courses into a container
@@ -62,7 +74,7 @@ void loadcourses(string filePath, RedBlackTree* bst) {
                 course.prereqs.push_back(vec[i]);
             }
 
-            bst->Insert(course, stoi(course.courseId.substr(vec[0].length() - 3)));
+            bst->Insert(course, stringToKey(course.courseId));
 
         }
         file.close();
@@ -70,6 +82,8 @@ void loadcourses(string filePath, RedBlackTree* bst) {
 
     else cout << "Unable to open file";
 }
+
+
 
 /**
  * Simple C function to convert a string to a double
@@ -102,6 +116,7 @@ int main(int argc, char* argv[]) {
 
     int choice = 0;
     while (choice != 9) {
+        //FIXME: This info do not correspond to what they actually do
         cout << "Menu:" << endl;
         cout << "  1. Load Courses" << endl;
         cout << "  2. Display All Courses" << endl;

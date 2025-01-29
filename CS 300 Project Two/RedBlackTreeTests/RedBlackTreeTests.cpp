@@ -12,24 +12,24 @@ namespace RedBlackTreeTests
 	public:
 		
 		//Example tree for testing
-		RedBlackTree testTree() {
-			RedBlackTree rbt;
+		std::unique_ptr<RedBlackTree> testTree() {
+			auto rbt = std::make_unique<RedBlackTree>();
 			Course c1, c2, c3, c4, c5;
-			rbt.Insert(c1, 1);
-			rbt.Insert(c2, 2);
-			rbt.Insert(c3, 3);
-			rbt.Insert(c4, 4);
-			rbt.Insert(c5, 5);
+			rbt->Insert(c1, 1);
+			rbt->Insert(c2, 2);
+			rbt->Insert(c3, 3);
+			rbt->Insert(c4, 4);
+			rbt->Insert(c5, 5);
 			return rbt;
 		}
 		TEST_METHOD(TestRootIsNull){
-			RedBlackTree rbt = *new RedBlackTree();
+			RedBlackTree rbt;
 			Assert::IsNull(rbt.GetRoot());
 		}
 
 		TEST_METHOD(TestInsertOne) {
-			RedBlackTree rbt = *new RedBlackTree();
-			rbt.Insert(*new Course(), 1);
+			RedBlackTree rbt;
+			rbt.Insert(Course(), 1);
 			Assert::IsTrue(rbt.GetRoot()->key == 1);
 		}
 
@@ -48,15 +48,17 @@ namespace RedBlackTreeTests
 			ValidateNodeColors(node->right);
 		}
 		TEST_METHOD(TestAllNodesHaveColor) {
-			RedBlackTree rbt = testTree();
-			ValidateNodeColors(rbt.GetRoot());
+			//FIXME: remove test cout
+			auto rbt = testTree();
+			ValidateNodeColors(rbt->GetRoot());
+			rbt->PrintPreOrderTraversal();
 		}
 
-
+		
 		//Property 2
 		TEST_METHOD(TestRootIsBlack) {
-			RedBlackTree rbt = testTree();
-			Assert::IsTrue(rbt.GetRoot()->nodeColor == Color::BLACK);
+			auto rbt = testTree();
+			Assert::IsTrue(rbt->GetRoot()->nodeColor == Color::BLACK);
 		}
 
 		//Property 3
@@ -71,8 +73,8 @@ namespace RedBlackTreeTests
 			ValidateNodeColors(node->right);
 		}
 		TEST_METHOD(TestConsecutiveRedNodes) {
-			RedBlackTree rbt = testTree();
-			ValidateRedChildren(rbt.GetRoot());
+			auto rbt = testTree();
+			ValidateRedChildren(rbt->GetRoot());
 		}
 
 		//Property 4
@@ -92,8 +94,8 @@ namespace RedBlackTreeTests
 			return leftBlackHeight + (node->nodeColor == Color::BLACK ? 1 : 0);
 		}
 		TEST_METHOD(TestBlackHeight) {
-			RedBlackTree rbt = testTree();
-			CheckBlackHeight(rbt.GetRoot());
+			auto rbt = testTree();
+			CheckBlackHeight(rbt->GetRoot());
 		}
 		
 

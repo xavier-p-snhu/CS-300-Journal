@@ -3,20 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F027A54-1CA9-442B-A10E-2E82B2840214}|RedBlackTreeTests\\RedBlackTreeTests.vcxproj|C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\RedBlackTreeTests\\RedBlackTreeTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2F027A54-1CA9-442B-A10E-2E82B2840214}|RedBlackTreeTests\\RedBlackTreeTests.vcxproj|solutionrelative:RedBlackTreeTests\\RedBlackTreeTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|solutionrelative:CS 300 Project Two\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\RedBlackTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|solutionrelative:CS 300 Project Two\\RedBlackTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\RedBlackTree.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|solutionrelative:CS 300 Project Two\\RedBlackTree.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|solutionrelative:CS 300 Project Two\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2F027A54-1CA9-442B-A10E-2E82B2840214}|RedBlackTreeTests\\RedBlackTreeTests.vcxproj|C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\RedBlackTreeTests\\RedBlackTreeTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2F027A54-1CA9-442B-A10E-2E82B2840214}|RedBlackTreeTests\\RedBlackTreeTests.vcxproj|solutionrelative:RedBlackTreeTests\\RedBlackTreeTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\RedBlackTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B94C88D5-0F6C-43B4-9451-E08D3F6322EC}|CS 300 Project Two\\CS 300 Project Two.vcxproj|solutionrelative:CS 300 Project Two\\RedBlackTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,30 +29,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "string",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAEwGMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-29T00:59:21.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "RedBlackTreeTests.cpp",
               "DocumentMoniker": "C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\RedBlackTreeTests\\RedBlackTreeTests.cpp",
               "RelativeDocumentMoniker": "RedBlackTreeTests\\RedBlackTreeTests.cpp",
               "ToolTip": "C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\RedBlackTreeTests\\RedBlackTreeTests.cpp",
               "RelativeToolTip": "RedBlackTreeTests\\RedBlackTreeTests.cpp",
-              "ViewState": "AgIAAEIAAAAAAAAAAADwv2AAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwA4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-26T15:01:15.639Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "RedBlackTree.cpp",
               "DocumentMoniker": "C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\RedBlackTree.cpp",
               "RelativeDocumentMoniker": "CS 300 Project Two\\RedBlackTree.cpp",
               "ToolTip": "C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\RedBlackTree.cpp",
               "RelativeToolTip": "CS 300 Project Two\\RedBlackTree.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAADwvwMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-26T01:26:02.574Z",
               "EditorCaption": ""
@@ -62,20 +78,20 @@
               "RelativeDocumentMoniker": "CS 300 Project Two\\RedBlackTree.hpp",
               "ToolTip": "C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\RedBlackTree.hpp",
               "RelativeToolTip": "CS 300 Project Two\\RedBlackTree.hpp",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-26T01:29:57.577Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\Main.cpp",
               "RelativeDocumentMoniker": "CS 300 Project Two\\Main.cpp",
               "ToolTip": "C:\\Users\\xjp20\\OneDrive\\Documents\\GitHub\\CS-300-Journal\\CS 300 Project Two\\CS 300 Project Two\\Main.cpp",
               "RelativeToolTip": "CS 300 Project Two\\Main.cpp",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFsAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAD4vzAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-25T23:09:57.796Z",
               "EditorCaption": ""

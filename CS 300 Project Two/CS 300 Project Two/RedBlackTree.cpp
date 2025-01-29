@@ -13,35 +13,48 @@ string colorToString(Color color);
 Course::Course() : courseId(""), title(""), prereqs() {}
 
 Node::Node()
-{
-}
+    : Node(Course()) {}
 
 Node::Node(Course aCourse)
-{
-}
+    : Node(aCourse, 0) {}
 
 Node::Node(Course aCourse, unsigned int aKey)
     : course(aCourse), key(aKey), left(nullptr), right(nullptr), parent(nullptr), nodeColor(Color::RED) {}
 
 RedBlackTree::RedBlackTree() : root(nullptr) {}
 
+// Free memory
+void RedBlackTree::FreeMemory(Node* node) {
+    if (node == nullptr) return;
+
+    // Recursively free left and right children
+    FreeMemory(node->left);
+    FreeMemory(node->right);
+
+    // Delete current node
+    delete node;
+
+    // Nullify node to avoid dangling pointers
+    node = nullptr;
+}
+
+
 // Destructor
 RedBlackTree::~RedBlackTree() {
-    // FIXME: FreeMemory causes memory problems, ironically
-    //FreeMemory(root);
+    FreeMemory(root);
+    root = nullptr;
 }
+
 
 // Print Node info (for traversal functions)
 void RedBlackTree::PrintNode(Node* n,int depth)
 {
-    std::cout << depth << " " << n->key << " | " << n->course.title << " " << colorToString(n->nodeColor) << endl;
+    std::cout << "Depth: " << depth << "; Key: " << n->key << "; Title: " << n->course.title << ";  Color: " << colorToString(n->nodeColor) << endl;
 }
 
 // In-Order traversal
 void RedBlackTree::InOrderTraversal(Node* n, int depth = 0) {
-    if (n == nullptr) {
-        return;
-    }
+    if (n == nullptr) return;
     InOrderTraversal(n->left, depth + 1);
     PrintNode(n, depth);
     InOrderTraversal(n->right, depth + 1);
@@ -49,9 +62,7 @@ void RedBlackTree::InOrderTraversal(Node* n, int depth = 0) {
 
 // Pre-Order Traversal
 void RedBlackTree::PreOrderTraversal(Node* n, int depth = 0) {
-    if (n == nullptr) {
-        return;
-    }
+    if (n == nullptr) return;
     PrintNode(n, depth);
     PreOrderTraversal(n->left, depth + 1);
     PreOrderTraversal(n->right, depth + 1);
@@ -245,13 +256,7 @@ Node* RedBlackTree::Sibling(Node* n) {
     }
 }
 
-// Free memory
-void RedBlackTree::FreeMemory(Node* node) {
-    if (node == nullptr) return;
-    FreeMemory(node->left);
-    FreeMemory(node->right);
-    delete node;
-}
+
 
 string colorToString(Color color)
 {
