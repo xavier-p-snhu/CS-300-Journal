@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CppUnitTest.h"
+#include "StringToKey.hpp"
 #include "RedBlackTree.hpp"
 #include <iostream>
 
@@ -48,7 +49,6 @@ namespace RedBlackTreeTests
 			ValidateNodeColors(node->right);
 		}
 		TEST_METHOD(TestAllNodesHaveColor) {
-			//FIXME: remove test cout
 			auto rbt = testTree();
 			ValidateNodeColors(rbt->GetRoot());
 			rbt->PrintPreOrderTraversal();
@@ -97,7 +97,31 @@ namespace RedBlackTreeTests
 			auto rbt = testTree();
 			CheckBlackHeight(rbt->GetRoot());
 		}
+
+		TEST_METHOD(TestSearch) {
+			auto rbt = testTree();
+			Assert::IsTrue(rbt->Search("5") != nullptr);
+		}
 		
+		TEST_METHOD(TestDeletion) {
+			auto rbt = testTree();
+			Assert::IsTrue(rbt->Search("5") != nullptr);
+			rbt->deleteNode("5");
+			cout << rbt->Search("5") << endl;
+			Assert::IsTrue(rbt->Search("5") == nullptr);
+		}
+
+		TEST_METHOD(TestDeletionBlackHeight) {
+			auto rbt = testTree();
+			rbt->deleteNode("5");
+			CheckBlackHeight(rbt->GetRoot());
+		}
+
+		TEST_METHOD(TestDeletionConsecutiveRedNodes) {
+			auto rbt = testTree();
+			rbt->deleteNode("5");
+			ValidateRedChildren(rbt->GetRoot());
+		}
 
 	};
 }

@@ -58,10 +58,12 @@ public:
     RedBlackTree();
     void Insert(Course course, int key);
     virtual ~RedBlackTree();
-    Course Search(string courseId);
+    Course* Search(string courseId);
     void PrintInOrderTraversal();
     void PrintPreOrderTraversal();
     Node* GetRoot();
+    Node* findNodeByCourse(string courseId);
+    void deleteNode(string courseId);
 };
 
 #endif // REDBLACKTREE_HPP

@@ -6,6 +6,7 @@
 #include "CSVparser.hpp"
 #include "RedBlackTree.hpp"
 #include "Main.h"
+#include "StringToKey.hpp"
 
 using namespace std;
 using std::vector;
@@ -19,8 +20,9 @@ using std::vector;
  *
  * @param course struct containing the course info
  */
-void displayCourse(Course course) {
-    cout << course.courseId << ": " << course.title << " | Prerequisites: ";
+
+void displayCourse(Course& course) {
+    cout << course.courseId << ": " << course.title  << " | Prerequisites: ";
     for (int i = 0; i < course.prereqs.size(); i++) {
         cout << course.prereqs[i] << " ";
     }
@@ -31,17 +33,6 @@ void displayCourse(Course course) {
 //============================================================================
 // Static methods used for testing
 //============================================================================
-
-int stringToKey(string stringToKeyify)
-{
-    //FIXME: make all keys unique
-    int key = 0;
-    for (int i = 0; i < stringToKeyify.size(); i++) {
-        int charToInt = stringToKeyify[i];
-        key += charToInt;
-    }
-    return key;
-}
 
 /**
  * Load a CSV file containing courses into a container
@@ -105,23 +96,24 @@ int main(int argc, char* argv[]) {
 
     string csvPath, courseKey;
     csvPath = "courses.txt";
-    courseKey = "400";
+    courseKey = "CHEM101";
 
     // Define a timer variable
     clock_t ticks;
 
     RedBlackTree* rbt;
-    Course course;
+    Course* course;
     rbt = new RedBlackTree;
 
     int choice = 0;
     while (choice != 9) {
-        //FIXME: This info do not correspond to what they actually do
         cout << "Menu:" << endl;
         cout << "  1. Load Courses" << endl;
-        cout << "  2. Display All Courses" << endl;
-        cout << "  3. Display All Courses Alphabetically" << endl;
-        cout << "  4. Find Course" << endl;
+        cout << "  2. Display All Courses with In Order Traversal" << endl;
+        cout << "  3. Display Root Node" << endl;
+        cout << "  4. Display All Courses with Pre Order Traversal" << endl;
+        cout << "  5. Search for course id =" << courseKey << endl;
+        cout << "  6. Delete course id =" << courseKey << endl;
         cout << "  9. Exit" << endl;
         cout << "Enter choice: ";
         cin >> choice;
@@ -145,8 +137,8 @@ int main(int argc, char* argv[]) {
             rbt->PrintInOrderTraversal();
             break;
         case 3:
+            cout << "Root node:" << endl;
             displayCourse(rbt->GetRoot()->course);
-            //rbt->PrintAllAlphanumeric();
             break;
         case 4:
             rbt->PrintPreOrderTraversal();
@@ -158,8 +150,8 @@ int main(int argc, char* argv[]) {
 
             ticks = clock() - ticks; // current clock ticks minus starting clock ticks
 
-            if (!course.courseId.empty()) {
-                displayCourse(course);
+            if (course != nullptr) {
+                displayCourse(*course);
             }
             else {
                 cout << "course Id " << courseKey << " not found." << endl;
@@ -168,7 +160,10 @@ int main(int argc, char* argv[]) {
             cout << "time: " << ticks << " clock ticks" << endl;
             cout << "time: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds" << endl;
             break;
+        case 6:
+            rbt->deleteNode(courseKey);
         }
+
     }
 
     cout << "Good bye." << endl;

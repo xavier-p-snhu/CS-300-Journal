@@ -1,8 +1,46 @@
 MATH201,Discrete Mathematics
-CSCI300,Introduction to Algorithms,CSCI200,MATH201
-CSCI350,Operating Systems,CSCI300
-CSCI101,Introduction to Programming in C++,CSCI100
+MATH202,Linear Algebra,MATH201
+MATH203,Probability and Statistics,MATH202
+MATH204,Differential Equations,MATH202
 CSCI100,Introduction to Computer Science
-CSCI301,Advanced Programming in C++,CSCI101
-CSCI400,Large Software Development,CSCI301,CSCI350
+CSCI101,Introduction to Programming in C++,CSCI100
 CSCI200,Data Structures,CSCI101
+CSCI300,Introduction to Algorithms,CSCI200,MATH201
+CSCI301,Advanced Programming in C++,CSCI101
+CSCI350,Operating Systems,CSCI300
+CSCI400,Large Software Development,CSCI301,CSCI350
+CSCI410,Artificial Intelligence,CSCI300
+CSCI420,Machine Learning,CSCI410,MATH202
+CSCI430,Computer Vision,CSCI420,MATH202
+CSCI450,Cybersecurity Principles,CSCI300
+CSCI460,Computer Networks,CSCI300
+CSCI470,Distributed Systems,CSCI350
+CSCI480,Game Development,CSCI301
+PHYS101,General Physics I
+PHYS102,General Physics II,PHYS101
+PHYS201,Modern Physics,PHYS102,MATH202
+PHYS301,Quantum Mechanics,PHYS201,MATH204
+PHYS350,Thermodynamics,PHYS201
+CHEM101,General Chemistry I
+CHEM102,General Chemistry II,CHEM101
+CHEM201,Organic Chemistry I,CHEM102
+CHEM202,Organic Chemistry II,CHEM201
+ENGR101,Introduction to Engineering
+ENGR201,Electrical Circuits,PHYS101,MATH202
+ENGR301,Digital Logic Design,CSCI100,ENGR201
+ENGR350,Control Systems,ENGR301,MATH204
+BIO101,Introduction to Biology
+BIO201,Genetics,BIO101
+BIO301,Molecular Biology,BIO201
+ECON101,Introduction to Microeconomics
+ECON102,Introduction to Macroeconomics
+ECON201,Intermediate Microeconomics,ECON101
+ECON202,Intermediate Macroeconomics,ECON102
+PSYC101,Introduction to Psychology
+PSYC201,Cognitive Psychology,PSYC101
+PSYC301,Behavioral Neuroscience,PSYC201
+HIST101,World History I
+HIST102,World History II,HIST101
+HIST201,American History
+PHIL101,Introduction to Philosophy
+PHIL201,Ethics and Moral Philosophy,PHIL101

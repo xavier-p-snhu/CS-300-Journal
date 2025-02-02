@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "RedBlackTree.hpp"
+#include "StringToKey.hpp"
 
 using namespace std;
 
@@ -54,6 +55,7 @@ void RedBlackTree::PrintNode(Node* n,int depth)
 
 // In-Order traversal
 void RedBlackTree::InOrderTraversal(Node* n, int depth = 0) {
+    // Todo: instead of printing, return all of the course information
     if (n == nullptr) return;
     InOrderTraversal(n->left, depth + 1);
     PrintNode(n, depth);
@@ -62,6 +64,7 @@ void RedBlackTree::InOrderTraversal(Node* n, int depth = 0) {
 
 // Pre-Order Traversal
 void RedBlackTree::PreOrderTraversal(Node* n, int depth = 0) {
+    // Todo: instead of printing, return all of the course information
     if (n == nullptr) return;
     PrintNode(n, depth);
     PreOrderTraversal(n->left, depth + 1);
@@ -153,20 +156,10 @@ void RedBlackTree::Insert(Course course, int key) {
 }
 
 // Search
-Course RedBlackTree::Search(string courseId) {
-    Node* current = root;
-    while (current != nullptr) {
-        if (current->course.courseId == courseId) {
-            return current->course;
-        }
-        else if (courseId < current->course.courseId) {
-            current = current->left;
-        }
-        else {
-            current = current->right;
-        }
-    }
-    return Course(); // Return a default Course if not found
+Course* RedBlackTree::Search(string courseId) {
+    Node* node = findNodeByCourse(courseId);
+    if (node == nullptr) return nullptr;
+    return &node->course;
 }
 
 // Rotate left
@@ -268,6 +261,81 @@ string colorToString(Color color)
     case BLACK:
         return "BLACK";
         break;
+    }
+    return"NIL";
+}
+
+Node* RedBlackTree::findNodeByCourse(string courseId) {
+    Node* current = root;
+    int key = stringToKey(courseId);
+    while (current != nullptr) {
+        if (current->key == key) {
+            return current;
+        }
+        else if (key < current->key) {
+            current = current->left;
+        }
+        else {
+            current = current->right;
+        }
+    }
+    return nullptr;
+}
+
+Node* getSuccessor(Node* curr) {
+    curr = curr->right;
+    while (curr != nullptr && curr->left != nullptr)
+        curr = curr->left;
+    return curr;
+}
+
+void RedBlackTree::deleteNode(string courseId) {
+    Node* nodeToDelete = findNodeByCourse(courseId);
+    Node* replacementNode = nullptr;
+    if (nodeToDelete == nullptr) return;
+
+    //
+    // Step 1: follow BST deletion rules
+    //
+
+    if (nodeToDelete->left != nullptr && nodeToDelete->right != nullptr) {
+        replacementNode = getSuccessor(nodeToDelete);
+
+        //Ensure hanging porinters to replacementNode are prevented
+        if (replacementNode->parent != nodeToDelete) {
+            if (replacementNode == replacementNode->parent->left) {
+                replacementNode->parent->left = nullptr;
+            }
+            else {
+                replacementNode->parent->right = nullptr;
+            }
+        }
+    }
+    else if (nodeToDelete->left != nullptr) {
+        replacementNode = nodeToDelete->left;
+    }
+    else if (nodeToDelete->right != nullptr) {
+        replacementNode = nodeToDelete->right;
+    }
+
+    // Ensure nodeToDelete's parent knows of nodeToDelete's replacement
+    if (nodeToDelete == root) {
+        root = replacementNode;
+    }
+    else if (nodeToDelete == nodeToDelete->parent->left) {
+        nodeToDelete->parent->left = replacementNode;
+    }
+    else {
+        nodeToDelete->parent->right = replacementNode;
+    }
+
+    //
+    // Step 2: Delete node and fix if neccecary
+    //
+    InsertFixup(nodeToDelete->parent);
+    delete nodeToDelete;
+    if (replacementNode != nullptr) {
+        InsertFixup(replacementNode);
     }
 }
 
