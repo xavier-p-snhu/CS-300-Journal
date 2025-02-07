@@ -1,0 +1,75 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.41.34120.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/xjp20/onedrive/documents/github/cs-300-journal/cs 300 project two/cs 300 project two/main.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "8fdf7d1c286fdc0c0a43dd4df75dbef422ee9a793ea3ae30bd17f36613491ed7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/xjp20/onedrive/documents/github/cs-300-journal/cs 300 project two/cs 300 project two/csvparser.hpp"
+          },
+          "hashes": {
+            "sha-256": "6b6d992f0a52a72a4afa8054fd9c3b9f4333703593cdfe980d55e5c051199b75"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/xjp20/onedrive/documents/github/cs-300-journal/cs 300 project two/cs 300 project two/redblacktree.hpp"
+          },
+          "hashes": {
+            "sha-256": "565f8ca9c8edf1fbcceedc4f4d24bbdada274330d5855b81d9a692a95b07fd40"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/xjp20/onedrive/documents/github/cs-300-journal/cs 300 project two/cs 300 project two/main.h"
+          },
+          "hashes": {
+            "sha-256": "23a27c8a96653b1a5572d5e3947d7ee7aae092f76722c48795f1fb0aa29bc625"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/xjp20/onedrive/documents/github/cs-300-journal/cs 300 project two/cs 300 project two/stringtokey.hpp"
+          },
+          "hashes": {
+            "sha-256": "b137fb3773969290aed5b9ba2f03061a28e1441b73acbfd97a282d835eed4bcf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/xjp20/onedrive/documents/sqlapi/include/sqlapi.h"
+          },
+          "hashes": {
+            "sha-256": "c60f516d540ff14b15514e6c75378f2b2a34393d0d2b88550c932acb525d4fbc"
+          }
+        }
+      ]
+    }
+  ]
+}

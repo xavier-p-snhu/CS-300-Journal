@@ -1,0 +1,73 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6031",
+          "message": {
+            "text": "Return value ignored: 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<csv::Row *> > >::*'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/xjp20/OneDrive/Documents/GitHub/CS-300-Journal/CS 300 Project Two/CS 300 Project Two/CSVparser.cpp"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 14,
+                  "endLine": 140,
+                  "endColumn": 35
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "csv::Parser::deleteRow",
+                  "decoratedName": "?deleteRow@Parser@csv@@QEAA_NI@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.41.34120.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/xjp20/OneDrive/Documents/GitHub/CS-300-Journal/CS 300 Project Two/CS 300 Project Two/CSVparser.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "bd59ad9903d1ad18d3eb70f711c9d8904836e38b528c56a2320086e676ad5e89"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/xjp20/onedrive/documents/github/cs-300-journal/cs 300 project two/cs 300 project two/csvparser.hpp"
+          },
+          "hashes": {
+            "sha-256": "6b6d992f0a52a72a4afa8054fd9c3b9f4333703593cdfe980d55e5c051199b75"
+          }
+        }
+      ]
+    }
+  ]
+}

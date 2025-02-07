@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  RedBlackTree.cpp
+C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\CS 300 Project Two\RedBlackTree.cpp(342,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  StringToKey.cpp
+C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\CS 300 Project Two\StringToKey.cpp(28,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  RedBlackTreeTests.cpp
+C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\RedBlackTreeTests\RedBlackTreeTests.cpp(3,10): error C1083: Cannot open include file: 'StringToKey.hpp': No such file or directory
+  (compiling source file '/RedBlackTreeTests.cpp')
+  
+  Generating Code...

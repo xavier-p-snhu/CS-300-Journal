@@ -1,5 +1,11 @@
-﻿  Main.cpp
-  RedBlackTree.cpp
-C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\CS 300 Project Two\RedBlackTree.cpp(276,22): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  CS 300 Project Two.vcxproj -> C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\x64\Debug\CS 300 Project Two.exe
+﻿Main.obj : error LNK2019: unresolved external symbol "public: __cdecl SAString::SAString(char const *)" (??0SAString@@QEAA@PEBD@Z) referenced in function main
+Main.obj : error LNK2019: unresolved external symbol "public: char const * __cdecl SAString::GetMultiByteChars(void)const " (?GetMultiByteChars@SAString@@QEBAPEBDXZ) referenced in function __catch$main$0
+Main.obj : error LNK2019: unresolved external symbol "public: __cdecl SAString::~SAString(void)" (??1SAString@@QEAA@XZ) referenced in function main
+Main.obj : error LNK2019: unresolved external symbol "public: __cdecl SAConnection::SAConnection(void)" (??0SAConnection@@QEAA@XZ) referenced in function main
+Main.obj : error LNK2019: unresolved external symbol "public: virtual __cdecl SAConnection::~SAConnection(void)" (??1SAConnection@@UEAA@XZ) referenced in function main
+Main.obj : error LNK2019: unresolved external symbol "public: void __cdecl SAConnection::Connect(class SAString const &,class SAString const &,class SAString const &,enum eSAClient,void (__cdecl*)(class SAConnection &,enum eSAConnectionHandlerType))" (?Connect@SAConnection@@QEAAXAEBVSAString@@00W4eSAClient@@P6AXAEAV1@W4eSAConnectionHandlerType@@@Z@Z) referenced in function main
+Main.obj : error LNK2019: unresolved external symbol "public: void __cdecl SAConnection::Disconnect(void)" (?Disconnect@SAConnection@@QEAAXXZ) referenced in function main
+Main.obj : error LNK2019: unresolved external symbol "public: void __cdecl SAConnection::Rollback(void)" (?Rollback@SAConnection@@QEAAXXZ) referenced in function __catch$main$0
+Main.obj : error LNK2019: unresolved external symbol "public: class SAString __cdecl SAException::ErrText(void)const " (?ErrText@SAException@@QEBA?AVSAString@@XZ) referenced in function __catch$main$0
+C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\vs2022\lib\sqlapi.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\x64\Debug\CS 300 Project Two.exe : fatal error LNK1120: 9 unresolved externals
