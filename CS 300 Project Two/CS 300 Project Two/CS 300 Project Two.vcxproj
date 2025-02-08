@@ -74,7 +74,7 @@
     <IncludePath>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\xjp20\OneDrive\Documents\SQLAPI\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;$(IncludePath)</IncludePath>
@@ -88,13 +88,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.2\include;C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sqlapi.lib;version.lib;user32.lib;ole32.lib;oleaut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\vs2022\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.2\lib64;C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\vs2022\x86_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -105,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;SQLAPI_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.2\include;C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,7 +113,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sqlapi.lib;version.lib;user32.lib;ole32.lib;oleaut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\vs2022\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.2\lib64;C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\vs2022\x86_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -122,14 +122,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.2\include;C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sqlapi.lib;version.lib;user32.lib;ole32.lib;oleaut32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\vs2022\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.2\lib64;C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\vs2022\x86_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -141,7 +141,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);SA_STATIC_LIB</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.2\include;C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,7 +149,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sqlapi.lib;version.lib;user32.lib;ole32.lib;oleaut32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\vs2022\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.2\lib64;C:\Users\xjp20\OneDrive\Documents\GitHub\CS-300-Journal\CS 300 Project Two\SQLAPI\vs2022\x86_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
