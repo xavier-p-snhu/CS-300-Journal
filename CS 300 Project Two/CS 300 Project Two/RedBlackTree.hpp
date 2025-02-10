@@ -22,6 +22,7 @@ struct Course {
     vector<string> prereqs;
 
     Course();
+    Course(string courseId, string title);
 };
 
 // Define structures to hold courses
@@ -64,6 +65,8 @@ public:
     Node* GetRoot();
     Node* findNodeByCourse(string courseId);
     void deleteNode(string courseId);
+    void exportToDatabase();
+    void importFromDatabase();
 };
 
 #endif // REDBLACKTREE_HPP

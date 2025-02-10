@@ -115,6 +115,8 @@ int main(int argc, char* argv[]) {
         cout << "  4. Display All Courses with Pre Order Traversal" << endl;
         cout << "  5. Search for course id =" << courseKey << endl;
         cout << "  6. Delete course id =" << courseKey << endl;
+        cout << "  7. Export courses to database" << endl;
+        cout << "  8. Import courses from database" << endl;
         cout << "  9. Exit" << endl;
         cout << "Enter choice: ";
         cin >> choice;
@@ -165,50 +167,14 @@ int main(int argc, char* argv[]) {
             rbt->deleteNode(courseKey);
             break;
         case 7:
-            //Test database
-            try {
-                // Create a connection object.
-                SAConnection con;
-
-                // Build the connection string.
-                // Format: "<server>@<database>"
-                // If your MySQL server is remote, specify its IP/hostname before the '@'
-                // For example: "192.168.1.100@mydatabase"
-                // For a local server, you can use "@mydatabase"
-                const char* sDBString = "@mydatabase";
-
-                // Replace with your MySQL username and password.
-                const char* sUserID = "root";
-                const char* sPassword = "password";
-
-                // Connect using SA_MySQL_Client as the client type.
-                con.Connect(sDBString, sUserID, sPassword, SA_MySQL_Client);
-
-                std::cout << "Connected to MySQL database!" << std::endl;
-
-                // -- Perform database operations here --
-                // For example, creating an SACommand object to execute queries.
-
-                // Disconnect from the database.
-                con.Disconnect();
-                std::cout << "Disconnected from MySQL database!" << std::endl;
-            }
-            catch (SAException& x) {
-                // Roll back any pending transactions (if necessary)
-                try {
-                    // In case a network error or other issue occurred,
-                    // you might want to attempt a rollback.
-                    // (Rollback() itself may throw an exception.)
-                    // Note: Rollback() is optional if no transaction is pending.
-                    SAConnection con; // You would normally use the same connection object.
-                    con.Rollback();
-                }
-                catch (SAException&) {
-                    // Ignore additional exceptions from rollback.
-                }
-                std::cerr << "Error connecting to database: "
-                    << x.ErrText().GetMultiByteChars() << std::endl;
-            }
+            rbt->exportToDatabase();
+            break;
+        case 8:
+            rbt->importFromDatabase();
+            break;
+        case 9:
+            //DO NOT USE. exits program
+            break;
         }
 
     }

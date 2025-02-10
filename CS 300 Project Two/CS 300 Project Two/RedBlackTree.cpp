@@ -3,6 +3,7 @@
 #include <vector>
 #include "RedBlackTree.hpp"
 #include "StringToKey.hpp"
+#include <SQLAPI.h>
 
 using namespace std;
 
@@ -10,8 +11,16 @@ using namespace std;
 double strToDouble(string str, char ch);
 string colorToString(Color color);
 
+//mySQL info
+const char* sDBString = "@courses";
+const char* sUserID = "root";
+const char* sPassword = "password";
+
 // Constructors
-Course::Course() : courseId(""), title(""), prereqs() {}
+Course::Course() 
+    : courseId(""), title(""), prereqs() {}
+Course::Course(string courseId, string title)
+    : courseId(courseId), title(title) {};
 
 Node::Node()
     : Node(Course()) {}
@@ -23,6 +32,98 @@ Node::Node(Course aCourse, unsigned int aKey)
     : course(aCourse), key(aKey), left(nullptr), right(nullptr), parent(nullptr), nodeColor(Color::RED) {}
 
 RedBlackTree::RedBlackTree() : root(nullptr) {}
+
+void insertNodeInDatabase(Node* node, SAConnection &con) {
+    //fixme: insert courses via json
+    SACommand insert(&con, _TSA("INSERT INTO COURSETABLE (ikey, courseId, title, color) VALUES (:1, :2, :3, :4)"));
+    if (node == nullptr) return;
+    insert << node->key, node->course.courseId, node->course.title, node->nodeColor;
+    insert.Param(1).setAsInt64() = node->key;
+    insert.Param(2).setAsString() = node->course.courseId.c_str();
+    insert.Param(3).setAsString() = node->course.title.c_str();
+    insert.Param(4).setAsString() = colorToString(node->nodeColor).c_str();
+
+    insert.Execute();
+    insertNodeInDatabase(node->left, con);
+    insertNodeInDatabase(node->right, con);
+};
+
+void RedBlackTree::exportToDatabase() {
+    try {
+        // Create a connection object.
+        SAConnection con;
+
+        // Connect using SA_MySQL_Client as the client type.
+        con.Connect(sDBString, sUserID, sPassword, SA_MySQL_Client);
+
+        // -- Perform database operations here --
+        insertNodeInDatabase(RedBlackTree::root, con);
+
+
+        // Disconnect from the database.
+        con.Disconnect();
+        std::cout << "Successfully exported to database." << std::endl;
+    }
+    catch (SAException& x) {
+        // Roll back any pending transactions (if necessary)
+        try {
+            // In case a network error or other issue occurred,
+            // you might want to attempt a rollback.
+            // (Rollback() itself may throw an exception.)
+            // Note: Rollback() is optional if no transaction is pending.
+            SAConnection con; // You would normally use the same connection object.
+            con.Rollback();
+        }
+        catch (SAException&) {
+            // Ignore additional exceptions from rollback.
+        }
+        std::cerr << "Error connecting to database: "
+            << x.ErrText().GetMultiByteChars() << std::endl;
+    }
+}
+
+void RedBlackTree::importFromDatabase() {
+    try {
+        // Create a connection object.
+        SAConnection con;
+
+        // Connect using SA_MySQL_Client as the client type.
+        con.Connect(sDBString, sUserID, sPassword, SA_MySQL_Client);
+
+        std::cout << "Connected to MySQL database!" << std::endl;
+
+        // -- Perform database operations here --
+        SACommand select(&con, _TSA("SELECT courseId, title FROM COURSETABLE"));
+
+        select.Execute();
+
+        while (select.FetchNext()) {
+            //SAString sName = select[1].asString();
+            //long nAge = select[2].asLong();
+            Insert(Course((select[1].asString().GetMultiByteChars()), (select[2].asString().GetMultiByteChars())), stringToKey(select[1].asString().GetMultiByteChars()));
+        }
+
+        // Disconnect from the database.
+        con.Disconnect();
+        std::cout << "Successfully inserted courses from database." << std::endl;
+    }
+    catch (SAException& x) {
+        // Roll back any pending transactions (if necessary)
+        try {
+            // In case a network error or other issue occurred,
+            // you might want to attempt a rollback.
+            // (Rollback() itself may throw an exception.)
+            // Note: Rollback() is optional if no transaction is pending.
+            SAConnection con; // You would normally use the same connection object.
+            con.Rollback();
+        }
+        catch (SAException&) {
+            // Ignore additional exceptions from rollback.
+        }
+        std::cerr << "Error connecting to database: "
+            << x.ErrText().GetMultiByteChars() << std::endl;
+    }
+}
 
 // Free memory
 void RedBlackTree::FreeMemory(Node* node) {
